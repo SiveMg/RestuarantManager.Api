@@ -1,4 +1,4 @@
-﻿namespace Dining.Models.Entities
+﻿namespace Dining.Models
 {
     public class Ingredient
     {

@@ -2,10 +2,11 @@ namespace Dining.Models
 {
     using System.ComponentModel.DataAnnotations;
 
-    public class MealTypes : BaseModel
+    public class MealType : BaseModel
     {
         [Key]
         public long MealTypeID { get; set; }
+        [Required]
         public string MealTypeName { get; set; }
         public string MealTypeDescription { get; set; }
     }
