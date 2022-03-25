@@ -11,5 +11,6 @@ namespace Dining.Models
         [Required]
         public string LastName { get; set; }
         public string EmailAddress { get; set; }
+        public virtual Waitstaff Waitstaff { get; set; }
     }
 }
