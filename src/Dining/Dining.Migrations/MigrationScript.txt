@@ -1,0 +1,5 @@
+﻿add-migration -Name DiningDb_FirstMigration 
+
+
+Add-Migration -Name DiningDb_FirstMigration -Force -ProjectName Dining.Models -StartUpProjectName Dining.Api -ConnectionString Server=DESKTOP-VNABVPB;Database=RestaurantDiningDB;Trusted_Connection=True;
+        

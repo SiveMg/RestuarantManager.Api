@@ -1,4 +1,4 @@
-namespace Dining.Models
+namespace Dining.Models.Entities
 {
     using System.ComponentModel.DataAnnotations;
     public class Meal : BaseModel
@@ -10,5 +10,6 @@ namespace Dining.Models
         public string Description { get; set; }
         public long IngredientID { get; set; }
         public virtual ICollection<Ingredient> Ingredients { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

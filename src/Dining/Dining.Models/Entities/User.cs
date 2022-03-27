@@ -1,7 +1,7 @@
-namespace Dining.Models
+namespace Dining.Models.Entities
 {
     using System.ComponentModel.DataAnnotations;
-    public class User: BaseModel
+    public class User
     {
         [Key]
         [Required]

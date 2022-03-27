@@ -1,0 +1,12 @@
+D:\Software\Restuarant\RestuarantManager.Api\src\Dining\Dining.Services\bin\Debug\net6.0\Dining.Services.deps.json
+D:\Software\Restuarant\RestuarantManager.Api\src\Dining\Dining.Services\bin\Debug\net6.0\Dining.Services.dll
+D:\Software\Restuarant\RestuarantManager.Api\src\Dining\Dining.Services\bin\Debug\net6.0\ref\Dining.Services.dll
+D:\Software\Restuarant\RestuarantManager.Api\src\Dining\Dining.Services\bin\Debug\net6.0\Dining.Services.pdb
+D:\Software\Restuarant\RestuarantManager.Api\src\Dining\Dining.Services\obj\Debug\net6.0\Dining.Services.csproj.AssemblyReference.cache
+D:\Software\Restuarant\RestuarantManager.Api\src\Dining\Dining.Services\obj\Debug\net6.0\Dining.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\Software\Restuarant\RestuarantManager.Api\src\Dining\Dining.Services\obj\Debug\net6.0\Dining.Services.AssemblyInfoInputs.cache
+D:\Software\Restuarant\RestuarantManager.Api\src\Dining\Dining.Services\obj\Debug\net6.0\Dining.Services.AssemblyInfo.cs
+D:\Software\Restuarant\RestuarantManager.Api\src\Dining\Dining.Services\obj\Debug\net6.0\Dining.Services.csproj.CoreCompileInputs.cache
+D:\Software\Restuarant\RestuarantManager.Api\src\Dining\Dining.Services\obj\Debug\net6.0\Dining.Services.dll
+D:\Software\Restuarant\RestuarantManager.Api\src\Dining\Dining.Services\obj\Debug\net6.0\ref\Dining.Services.dll
+D:\Software\Restuarant\RestuarantManager.Api\src\Dining\Dining.Services\obj\Debug\net6.0\Dining.Services.pdb

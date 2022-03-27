@@ -1,0 +1,12 @@
+D:\Software\Restuarant\RestuarantManager.Api\src\Dining\Dining.Migrations\bin\Debug\net6.0\Dining.Migrations.deps.json
+D:\Software\Restuarant\RestuarantManager.Api\src\Dining\Dining.Migrations\bin\Debug\net6.0\Dining.Migrations.dll
+D:\Software\Restuarant\RestuarantManager.Api\src\Dining\Dining.Migrations\bin\Debug\net6.0\ref\Dining.Migrations.dll
+D:\Software\Restuarant\RestuarantManager.Api\src\Dining\Dining.Migrations\bin\Debug\net6.0\Dining.Migrations.pdb
+D:\Software\Restuarant\RestuarantManager.Api\src\Dining\Dining.Migrations\obj\Debug\net6.0\Dining.Migrations.csproj.AssemblyReference.cache
+D:\Software\Restuarant\RestuarantManager.Api\src\Dining\Dining.Migrations\obj\Debug\net6.0\Dining.Migrations.GeneratedMSBuildEditorConfig.editorconfig
+D:\Software\Restuarant\RestuarantManager.Api\src\Dining\Dining.Migrations\obj\Debug\net6.0\Dining.Migrations.AssemblyInfoInputs.cache
+D:\Software\Restuarant\RestuarantManager.Api\src\Dining\Dining.Migrations\obj\Debug\net6.0\Dining.Migrations.AssemblyInfo.cs
+D:\Software\Restuarant\RestuarantManager.Api\src\Dining\Dining.Migrations\obj\Debug\net6.0\Dining.Migrations.csproj.CoreCompileInputs.cache
+D:\Software\Restuarant\RestuarantManager.Api\src\Dining\Dining.Migrations\obj\Debug\net6.0\Dining.Migrations.dll
+D:\Software\Restuarant\RestuarantManager.Api\src\Dining\Dining.Migrations\obj\Debug\net6.0\ref\Dining.Migrations.dll
+D:\Software\Restuarant\RestuarantManager.Api\src\Dining\Dining.Migrations\obj\Debug\net6.0\Dining.Migrations.pdb
