@@ -1,27 +1,26 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{660CF461-C1F5-440F-8B70-E2AA6DA3F998}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dining", "Dining", "{2951D499-1706-40EF-AC71-CC2BF51FD6F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dining.Api", "src\Dining\Dining.Api\Dining.Api.csproj", "{D631C4D7-B09E-4877-98FD-3233525A0DAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dining.Api", "src\Dining\Dining.Api\Dining.Api.csproj", "{D631C4D7-B09E-4877-98FD-3233525A0DAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dining.Services", "src\Dining\Dining.Services\Dining.Services.csproj", "{40329E4E-667A-46CD-9E63-A90C9E938189}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dining.Services", "src\Dining\Dining.Services\Dining.Services.csproj", "{40329E4E-667A-46CD-9E63-A90C9E938189}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dining.Repository", "src\Dining\Dining.Repository\Dining.Repository.csproj", "{806356C1-6250-4778-8D39-CF2D5B4E56B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dining.Repository", "src\Dining\Dining.Repository\Dining.Repository.csproj", "{806356C1-6250-4778-8D39-CF2D5B4E56B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dining.Models", "src\Dining\Dining.Models\Dining.Models.csproj", "{EC3A2E85-84A9-4C42-8DBE-74730FE13B43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dining.Models", "src\Dining\Dining.Models\Dining.Models.csproj", "{EC3A2E85-84A9-4C42-8DBE-74730FE13B43}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dining.Migrations", "src\Dining\Dining.Migrations\Dining.Migrations.csproj", "{0CE9E313-458F-40D3-80B4-3B614C697111}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{D631C4D7-B09E-4877-98FD-3233525A0DAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -40,6 +39,13 @@ Global
 		{EC3A2E85-84A9-4C42-8DBE-74730FE13B43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC3A2E85-84A9-4C42-8DBE-74730FE13B43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC3A2E85-84A9-4C42-8DBE-74730FE13B43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CE9E313-458F-40D3-80B4-3B614C697111}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CE9E313-458F-40D3-80B4-3B614C697111}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CE9E313-458F-40D3-80B4-3B614C697111}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CE9E313-458F-40D3-80B4-3B614C697111}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2951D499-1706-40EF-AC71-CC2BF51FD6F2} = {660CF461-C1F5-440F-8B70-E2AA6DA3F998}
@@ -47,5 +53,9 @@ Global
 		{40329E4E-667A-46CD-9E63-A90C9E938189} = {2951D499-1706-40EF-AC71-CC2BF51FD6F2}
 		{806356C1-6250-4778-8D39-CF2D5B4E56B8} = {2951D499-1706-40EF-AC71-CC2BF51FD6F2}
 		{EC3A2E85-84A9-4C42-8DBE-74730FE13B43} = {2951D499-1706-40EF-AC71-CC2BF51FD6F2}
+		{0CE9E313-458F-40D3-80B4-3B614C697111} = {2951D499-1706-40EF-AC71-CC2BF51FD6F2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8F99DDFA-FEB8-4982-A79D-9DB77EF452D0}
 	EndGlobalSection
 EndGlobal

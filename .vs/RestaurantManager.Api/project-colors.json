@@ -10,7 +10,12 @@
       "ProjectGuid": "ec3a2e85-84a9-4c42-8dbe-74730fe13b43",
       "DisplayName": "Dining.Models",
       "ColorIndex": 1
+    },
+    "0ce9e313-458f-40d3-80b4-3b614c697111": {
+      "ProjectGuid": "0ce9e313-458f-40d3-80b4-3b614c697111",
+      "DisplayName": "Dining.Migrations",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 3
 }
