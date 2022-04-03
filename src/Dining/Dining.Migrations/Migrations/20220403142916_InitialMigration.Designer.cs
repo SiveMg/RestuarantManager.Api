@@ -4,6 +4,7 @@ using Dining.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Dining.Api.Migrations
 {
     [DbContext(typeof(RestaurantDiningContext))]
-    partial class RestaurantDiningContextModelSnapshot : ModelSnapshot
+    [Migration("20220403142916_InitialMigration")]
+    partial class InitialMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -70,14 +72,15 @@ namespace Dining.Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IngredientId"), 1L, 1);
 
-                    b.Property<string>("IngredientDescription")
+                    b.Property<string>("IngredientName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("IngredientName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<long?>("MealId")
+                        .HasColumnType("bigint");
 
                     b.HasKey("IngredientId");
+
+                    b.HasIndex("MealId");
 
                     b.ToTable("Ingredients");
                 });
@@ -147,6 +150,9 @@ namespace Dining.Api.Migrations
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
+
+                    b.Property<long>("MealID")
+                        .HasColumnType("bigint");
 
                     b.Property<DateTime>("ModifiedOn")
                         .HasColumnType("datetime2");
@@ -249,19 +255,28 @@ namespace Dining.Api.Migrations
                     b.ToTable("Waitstaff");
                 });
 
-            modelBuilder.Entity("IngredientMeal", b =>
+            modelBuilder.Entity("MealOrder", b =>
                 {
-                    b.Property<long>("IngredientsIngredientId")
-                        .HasColumnType("bigint");
-
                     b.Property<long>("MealsMealId")
                         .HasColumnType("bigint");
 
-                    b.HasKey("IngredientsIngredientId", "MealsMealId");
+                    b.Property<int>("OrdersOrderId")
+                        .HasColumnType("int");
 
-                    b.HasIndex("MealsMealId");
+                    b.HasKey("MealsMealId", "OrdersOrderId");
 
-                    b.ToTable("IngredientMeal");
+                    b.HasIndex("OrdersOrderId");
+
+                    b.ToTable("MealOrder");
+                });
+
+            modelBuilder.Entity("Dining.Models.Entities.Ingredient", b =>
+                {
+                    b.HasOne("Dining.Models.Entities.Meal", "Meal")
+                        .WithMany("Ingredients")
+                        .HasForeignKey("MealId");
+
+                    b.Navigation("Meal");
                 });
 
             modelBuilder.Entity("Dining.Models.Entities.Order", b =>
@@ -302,17 +317,17 @@ namespace Dining.Api.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("IngredientMeal", b =>
+            modelBuilder.Entity("MealOrder", b =>
                 {
-                    b.HasOne("Dining.Models.Entities.Ingredient", null)
-                        .WithMany()
-                        .HasForeignKey("IngredientsIngredientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Dining.Models.Entities.Meal", null)
                         .WithMany()
                         .HasForeignKey("MealsMealId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Dining.Models.Entities.Order", null)
+                        .WithMany()
+                        .HasForeignKey("OrdersOrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -320,6 +335,11 @@ namespace Dining.Api.Migrations
             modelBuilder.Entity("Dining.Models.Entities.Address", b =>
                 {
                     b.Navigation("Waitstaff");
+                });
+
+            modelBuilder.Entity("Dining.Models.Entities.Meal", b =>
+                {
+                    b.Navigation("Ingredients");
                 });
 #pragma warning restore 612, 618
         }

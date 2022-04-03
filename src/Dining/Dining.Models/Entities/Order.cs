@@ -14,9 +14,6 @@
         [ForeignKey("Table")]
         public long TableID { get; set; }
         public virtual Table Table { get; set; }
-        [Required]
-        [ForeignKey("Meals")]
-        public long MealID { get; set; }
-        public virtual ICollection<Meal> Meals { get; set; }
+        
     }
 }

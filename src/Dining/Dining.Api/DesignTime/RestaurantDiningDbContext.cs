@@ -24,7 +24,7 @@ namespace Dining.Models
                 .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
                 .AddJsonFile("appsettings.json")
                 .Build();
-            optionsBuilder.UseSqlServer(configuration.GetConnectionString("Dev"));
+            optionsBuilder.UseSqlServer(configuration.GetConnectionString("Dev"), b => b.MigrationsAssembly("Dining.Api"));
         }
 
     }

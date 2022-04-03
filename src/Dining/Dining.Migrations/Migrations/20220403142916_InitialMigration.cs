@@ -10,21 +10,6 @@ namespace Dining.Api.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Users",
-                columns: table => new
-                {
-                    UserId = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EmailAddress = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Users", x => x.UserId);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Adresses",
                 columns: table => new
                 {
@@ -37,25 +22,11 @@ namespace Dining.Api.Migrations
                     PotalCode = table.Column<long>(type: "bigint", nullable: false),
                     Country = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedByUserId = table.Column<long>(type: "bigint", nullable: false),
-                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifiedByUserId = table.Column<long>(type: "bigint", nullable: false)
+                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Adresses", x => x.AddressId);
-                    table.ForeignKey(
-                        name: "FK_Adresses_Users_CreatedByUserId",
-                        column: x => x.CreatedByUserId,
-                        principalTable: "Users",
-                        principalColumn: "UserId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Adresses_Users_ModifiedByUserId",
-                        column: x => x.ModifiedByUserId,
-                        principalTable: "Users",
-                        principalColumn: "UserId",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -68,25 +39,11 @@ namespace Dining.Api.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IngredientID = table.Column<long>(type: "bigint", nullable: false),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedByUserId = table.Column<long>(type: "bigint", nullable: false),
-                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifiedByUserId = table.Column<long>(type: "bigint", nullable: false)
+                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Meals", x => x.MealId);
-                    table.ForeignKey(
-                        name: "FK_Meals_Users_CreatedByUserId",
-                        column: x => x.CreatedByUserId,
-                        principalTable: "Users",
-                        principalColumn: "UserId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Meals_Users_ModifiedByUserId",
-                        column: x => x.ModifiedByUserId,
-                        principalTable: "Users",
-                        principalColumn: "UserId",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -98,25 +55,11 @@ namespace Dining.Api.Migrations
                     MealTypeName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     MealTypeDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedByUserId = table.Column<long>(type: "bigint", nullable: false),
-                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifiedByUserId = table.Column<long>(type: "bigint", nullable: false)
+                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_MealTypes", x => x.MealTypeID);
-                    table.ForeignKey(
-                        name: "FK_MealTypes_Users_CreatedByUserId",
-                        column: x => x.CreatedByUserId,
-                        principalTable: "Users",
-                        principalColumn: "UserId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_MealTypes_Users_ModifiedByUserId",
-                        column: x => x.ModifiedByUserId,
-                        principalTable: "Users",
-                        principalColumn: "UserId",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -128,68 +71,26 @@ namespace Dining.Api.Migrations
                     TableName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     TableDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedByUserId = table.Column<long>(type: "bigint", nullable: false),
-                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifiedByUserId = table.Column<long>(type: "bigint", nullable: false)
+                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Tables", x => x.TableId);
-                    table.ForeignKey(
-                        name: "FK_Tables_Users_CreatedByUserId",
-                        column: x => x.CreatedByUserId,
-                        principalTable: "Users",
-                        principalColumn: "UserId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Tables_Users_ModifiedByUserId",
-                        column: x => x.ModifiedByUserId,
-                        principalTable: "Users",
-                        principalColumn: "UserId",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Waitstaff",
+                name: "Users",
                 columns: table => new
                 {
-                    WaitstaffId = table.Column<long>(type: "bigint", nullable: false)
+                    UserId = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AddresId = table.Column<long>(type: "bigint", nullable: false),
-                    UserId = table.Column<long>(type: "bigint", nullable: false),
-                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedByUserId = table.Column<long>(type: "bigint", nullable: false),
-                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifiedByUserId = table.Column<long>(type: "bigint", nullable: false)
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    EmailAddress = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Waitstaff", x => x.WaitstaffId);
-                    table.ForeignKey(
-                        name: "FK_Waitstaff_Adresses_AddresId",
-                        column: x => x.AddresId,
-                        principalTable: "Adresses",
-                        principalColumn: "AddressId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Waitstaff_Users_CreatedByUserId",
-                        column: x => x.CreatedByUserId,
-                        principalTable: "Users",
-                        principalColumn: "UserId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Waitstaff_Users_ModifiedByUserId",
-                        column: x => x.ModifiedByUserId,
-                        principalTable: "Users",
-                        principalColumn: "UserId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Waitstaff_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
-                        principalColumn: "UserId",
-                        onDelete: ReferentialAction.Cascade);
+                    table.PrimaryKey("PK_Users", x => x.UserId);
                 });
 
             migrationBuilder.CreateTable(
@@ -212,6 +113,35 @@ namespace Dining.Api.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Waitstaff",
+                columns: table => new
+                {
+                    WaitstaffId = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AddresId = table.Column<long>(type: "bigint", nullable: false),
+                    UserId = table.Column<long>(type: "bigint", nullable: false),
+                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Waitstaff", x => x.WaitstaffId);
+                    table.ForeignKey(
+                        name: "FK_Waitstaff_Adresses_AddresId",
+                        column: x => x.AddresId,
+                        principalTable: "Adresses",
+                        principalColumn: "AddressId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Waitstaff_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "UserId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Orders",
                 columns: table => new
                 {
@@ -221,9 +151,7 @@ namespace Dining.Api.Migrations
                     TableID = table.Column<long>(type: "bigint", nullable: false),
                     MealID = table.Column<long>(type: "bigint", nullable: false),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedByUserId = table.Column<long>(type: "bigint", nullable: false),
-                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifiedByUserId = table.Column<long>(type: "bigint", nullable: false)
+                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -233,18 +161,6 @@ namespace Dining.Api.Migrations
                         column: x => x.TableID,
                         principalTable: "Tables",
                         principalColumn: "TableId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Orders_Users_CreatedByUserId",
-                        column: x => x.CreatedByUserId,
-                        principalTable: "Users",
-                        principalColumn: "UserId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Orders_Users_ModifiedByUserId",
-                        column: x => x.ModifiedByUserId,
-                        principalTable: "Users",
-                        principalColumn: "UserId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Orders_Waitstaff_WaitstaffID",
@@ -279,16 +195,6 @@ namespace Dining.Api.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Adresses_CreatedByUserId",
-                table: "Adresses",
-                column: "CreatedByUserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Adresses_ModifiedByUserId",
-                table: "Adresses",
-                column: "ModifiedByUserId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Ingredients_MealId",
                 table: "Ingredients",
                 column: "MealId");
@@ -297,36 +203,6 @@ namespace Dining.Api.Migrations
                 name: "IX_MealOrder_OrdersOrderId",
                 table: "MealOrder",
                 column: "OrdersOrderId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Meals_CreatedByUserId",
-                table: "Meals",
-                column: "CreatedByUserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Meals_ModifiedByUserId",
-                table: "Meals",
-                column: "ModifiedByUserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_MealTypes_CreatedByUserId",
-                table: "MealTypes",
-                column: "CreatedByUserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_MealTypes_ModifiedByUserId",
-                table: "MealTypes",
-                column: "ModifiedByUserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Orders_CreatedByUserId",
-                table: "Orders",
-                column: "CreatedByUserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Orders_ModifiedByUserId",
-                table: "Orders",
-                column: "ModifiedByUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Orders_TableID",
@@ -339,30 +215,10 @@ namespace Dining.Api.Migrations
                 column: "WaitstaffID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tables_CreatedByUserId",
-                table: "Tables",
-                column: "CreatedByUserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Tables_ModifiedByUserId",
-                table: "Tables",
-                column: "ModifiedByUserId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Waitstaff_AddresId",
                 table: "Waitstaff",
                 column: "AddresId",
                 unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Waitstaff_CreatedByUserId",
-                table: "Waitstaff",
-                column: "CreatedByUserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Waitstaff_ModifiedByUserId",
-                table: "Waitstaff",
-                column: "ModifiedByUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Waitstaff_UserId",

@@ -1,5 +1,12 @@
-﻿add-migration -Name DiningDb_FirstMigration 
+﻿// Make sure to use EF Core instead of EF 6
+
+// Set the default project to Dining.Api and generate the migration file. .
+EntityFrameworkCore\Add-Migration -Name FixEntityRelationships -v
+
+// Then to update the database
+
+EntityFrameworkCore\Update-Database
 
 
-Add-Migration -Name DiningDb_FirstMigration -Force -ProjectName Dining.Models -StartUpProjectName Dining.Api -ConnectionString Server=DESKTOP-VNABVPB;Database=RestaurantDiningDB;Trusted_Connection=True;
-        
+// When done, move the files to the migrations project
+
