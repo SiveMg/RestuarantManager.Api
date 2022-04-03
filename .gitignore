@@ -1,0 +1,9 @@
+src/Dining/Dining.Api/bin
+src/Dining/Dining.Api/obj
+src/Dining/Dining.Migrations/bin
+src/Dining/Dining.Migrations/obj
+src/Dining/Dining.Models/bin
+src/Dining/Dining.Repository/bin
+src/Dining/Dining.Repository/obj
+src/Dining/Dining.Services/bin
+src/Dining/Dining.Services/obj

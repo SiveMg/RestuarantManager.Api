@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "d631c4d7-b09e-4877-98fd-3233525a0daa": {
+      "ProjectGuid": "d631c4d7-b09e-4877-98fd-3233525a0daa",
+      "DisplayName": "Dining.Api",
+      "ColorIndex": 0
+    },
+    "ec3a2e85-84a9-4c42-8dbe-74730fe13b43": {
+      "ProjectGuid": "ec3a2e85-84a9-4c42-8dbe-74730fe13b43",
+      "DisplayName": "Dining.Models",
+      "ColorIndex": 1
+    },
+    "0ce9e313-458f-40d3-80b4-3b614c697111": {
+      "ProjectGuid": "0ce9e313-458f-40d3-80b4-3b614c697111",
+      "DisplayName": "Dining.Migrations",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}
