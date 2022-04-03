@@ -1,6 +1,8 @@
 namespace Dining.Models.Entities
 {
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public class User
     {
         [Key]
@@ -11,6 +13,7 @@ namespace Dining.Models.Entities
         [Required]
         public string LastName { get; set; }
         public string EmailAddress { get; set; }
+        [NotMapped]
         public virtual Waitstaff Waitstaff { get; set; }
     }
 }

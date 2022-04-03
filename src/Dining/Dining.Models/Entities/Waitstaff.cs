@@ -6,6 +6,7 @@ namespace Dining.Models.Entities
     public class Waitstaff : BaseModel
     {
         [Key]
+       
         public long WaitstaffId { get; set; }
         public string PhoneNumber { get; set; }
         [ForeignKey("Address")]

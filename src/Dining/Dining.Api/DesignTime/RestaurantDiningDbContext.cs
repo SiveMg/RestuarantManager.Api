@@ -2,7 +2,6 @@ namespace Dining.Models
 {
     using Dining.Models.Entities;
     using Microsoft.EntityFrameworkCore;
-
     public class RestaurantDiningContext : DbContext
     {
         public DbSet<User> Users { get; set; }
@@ -17,7 +16,7 @@ namespace Dining.Models
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
         //    modelBuilder.Entity<Waitstaff>()
-                
+
         //}
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
