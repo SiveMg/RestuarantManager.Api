@@ -1,3 +1,6 @@
+using Dining.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +9,12 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+IConfiguration configuration = new ConfigurationBuilder()
+                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                .AddJsonFile("appsettings.json")
+                .Build();
+builder.Services.AddDbContext<RestaurantDiningContext>(o => o.UseSqlServer(configuration.GetConnectionString("Dev")));
 
 var app = builder.Build();
 
