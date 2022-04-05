@@ -1,13 +1,14 @@
 namespace Dining.Models.Entities
 {
+    using Dining.Models.Interfaces;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public class Meal : BaseModel
+    public class Meal : BaseModel, IEntity
     {
         [Key]
         [Required]
-        public long MealId { get; set; }
+        public long Id { get; set; }
         [Required]
         public string Name { get; set; }
         public string Description { get; set; }

@@ -1,6 +1,15 @@
 using Dining.Models;
+using Dining.Models.Interfaces;
+using Dining.Repository.Interfaces;
+using Dining.Repository.Repositories;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
+IConfiguration configuration = new ConfigurationBuilder()
+    .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+    .AddJsonFile("appsettings.json")
+    .Build();
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -9,12 +18,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-IConfiguration configuration = new ConfigurationBuilder()
-                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-                .AddJsonFile("appsettings.json")
-                .Build();
-builder.Services.AddDbContext<RestaurantDiningContext>(o => o.UseSqlServer(configuration.GetConnectionString("Dev")));
+builder.Services.AddDbContext<RestaurantDiningContext>(options =>
+         options.UseSqlServer(configuration.GetConnectionString("Dev"), b => b.MigrationsAssembly("Dining.Infrastructure")));
+builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
+builder.Services.AddScoped<ISQLServerDiningRepository<IEntity>, SQLServerDiningRepository<IEntity>>();
 
 var app = builder.Build();
 

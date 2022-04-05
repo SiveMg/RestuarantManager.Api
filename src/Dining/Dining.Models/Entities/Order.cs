@@ -1,11 +1,12 @@
 ﻿namespace Dining.Models.Entities
 {
+    using Dining.Models.Interfaces;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    public class Order : BaseModel
+    public class Order : BaseModel, IEntity
     {
         [Key]
-        public int OrderId { get; set; }
+        public long Id { get; set; }
 
         [Required]
         [ForeignKey("Waitstaff")]
