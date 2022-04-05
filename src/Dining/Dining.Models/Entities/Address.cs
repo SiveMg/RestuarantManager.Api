@@ -1,13 +1,14 @@
 namespace Dining.Models.Entities
 {
+    using Dining.Models.Interfaces;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public class Address : BaseModel
+    public class Address : BaseModel, IEntity
     {
         [Key]
         [Column(Order = 1)]
-        public long AddressId { get; set; }
+        public long Id { get; set; }
         public string? Address1 { get; set; }
         public string? Address2 { get; set; }
         [Required]

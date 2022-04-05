@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dining.Models", "src\Dining
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dining.Migrations", "src\Dining\Dining.Migrations\Dining.Migrations.csproj", "{0CE9E313-458F-40D3-80B4-3B614C697111}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dining.Test", "src\Dining\Dining.Test\Dining.Test.csproj", "{70C7653E-1DB3-4F52-BBBF-7BCE6A50AE17}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{0CE9E313-458F-40D3-80B4-3B614C697111}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CE9E313-458F-40D3-80B4-3B614C697111}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CE9E313-458F-40D3-80B4-3B614C697111}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70C7653E-1DB3-4F52-BBBF-7BCE6A50AE17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70C7653E-1DB3-4F52-BBBF-7BCE6A50AE17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70C7653E-1DB3-4F52-BBBF-7BCE6A50AE17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70C7653E-1DB3-4F52-BBBF-7BCE6A50AE17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +60,7 @@ Global
 		{806356C1-6250-4778-8D39-CF2D5B4E56B8} = {2951D499-1706-40EF-AC71-CC2BF51FD6F2}
 		{EC3A2E85-84A9-4C42-8DBE-74730FE13B43} = {2951D499-1706-40EF-AC71-CC2BF51FD6F2}
 		{0CE9E313-458F-40D3-80B4-3B614C697111} = {2951D499-1706-40EF-AC71-CC2BF51FD6F2}
+		{70C7653E-1DB3-4F52-BBBF-7BCE6A50AE17} = {2951D499-1706-40EF-AC71-CC2BF51FD6F2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8F99DDFA-FEB8-4982-A79D-9DB77EF452D0}

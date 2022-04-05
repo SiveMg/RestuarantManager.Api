@@ -24,12 +24,12 @@ namespace Dining.Api.Migrations
 
             modelBuilder.Entity("Dining.Models.Entities.Address", b =>
                 {
-                    b.Property<long>("AddressId")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
                         .HasColumnOrder(1);
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("AddressId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
 
                     b.Property<string>("Address1")
                         .HasColumnType("nvarchar(max)");
@@ -57,18 +57,21 @@ namespace Dining.Api.Migrations
                     b.Property<string>("Province")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("AddressId");
+                    b.HasKey("Id");
 
                     b.ToTable("Adresses");
                 });
 
             modelBuilder.Entity("Dining.Models.Entities.Ingredient", b =>
                 {
-                    b.Property<long>("IngredientId")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IngredientId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("IngredientDescription")
                         .HasColumnType("nvarchar(max)");
@@ -77,18 +80,21 @@ namespace Dining.Api.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("IngredientId");
+                    b.Property<DateTime>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
 
                     b.ToTable("Ingredients");
                 });
 
             modelBuilder.Entity("Dining.Models.Entities.Meal", b =>
                 {
-                    b.Property<long>("MealId")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("MealId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
@@ -106,18 +112,18 @@ namespace Dining.Api.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("MealId");
+                    b.HasKey("Id");
 
                     b.ToTable("Meals");
                 });
 
             modelBuilder.Entity("Dining.Models.Entities.MealType", b =>
                 {
-                    b.Property<long>("MealTypeID")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("MealTypeID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
@@ -132,18 +138,18 @@ namespace Dining.Api.Migrations
                     b.Property<DateTime>("ModifiedOn")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("MealTypeID");
+                    b.HasKey("Id");
 
                     b.ToTable("MealTypes");
                 });
 
             modelBuilder.Entity("Dining.Models.Entities.Order", b =>
                 {
-                    b.Property<int>("OrderId")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
@@ -157,7 +163,7 @@ namespace Dining.Api.Migrations
                     b.Property<long>("WaitstaffID")
                         .HasColumnType("bigint");
 
-                    b.HasKey("OrderId");
+                    b.HasKey("Id");
 
                     b.HasIndex("TableID");
 
@@ -168,11 +174,11 @@ namespace Dining.Api.Migrations
 
             modelBuilder.Entity("Dining.Models.Entities.Table", b =>
                 {
-                    b.Property<long>("TableId")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("TableId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
@@ -187,18 +193,18 @@ namespace Dining.Api.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("TableId");
+                    b.HasKey("Id");
 
                     b.ToTable("Tables");
                 });
 
             modelBuilder.Entity("Dining.Models.Entities.User", b =>
                 {
-                    b.Property<long>("UserId")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("UserId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
 
                     b.Property<string>("EmailAddress")
                         .HasColumnType("nvarchar(max)");
@@ -211,18 +217,18 @@ namespace Dining.Api.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("UserId");
+                    b.HasKey("Id");
 
                     b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Dining.Models.Entities.Waitstaff", b =>
                 {
-                    b.Property<long>("WaitstaffId")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("WaitstaffId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
 
                     b.Property<long>("AddresId")
                         .HasColumnType("bigint");
@@ -239,7 +245,7 @@ namespace Dining.Api.Migrations
                     b.Property<long>("UserId")
                         .HasColumnType("bigint");
 
-                    b.HasKey("WaitstaffId");
+                    b.HasKey("Id");
 
                     b.HasIndex("AddresId")
                         .IsUnique();
@@ -251,15 +257,15 @@ namespace Dining.Api.Migrations
 
             modelBuilder.Entity("IngredientMeal", b =>
                 {
-                    b.Property<long>("IngredientsIngredientId")
+                    b.Property<long>("IngredientsId")
                         .HasColumnType("bigint");
 
-                    b.Property<long>("MealsMealId")
+                    b.Property<long>("MealsId")
                         .HasColumnType("bigint");
 
-                    b.HasKey("IngredientsIngredientId", "MealsMealId");
+                    b.HasKey("IngredientsId", "MealsId");
 
-                    b.HasIndex("MealsMealId");
+                    b.HasIndex("MealsId");
 
                     b.ToTable("IngredientMeal");
                 });
@@ -306,13 +312,13 @@ namespace Dining.Api.Migrations
                 {
                     b.HasOne("Dining.Models.Entities.Ingredient", null)
                         .WithMany()
-                        .HasForeignKey("IngredientsIngredientId")
+                        .HasForeignKey("IngredientsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Dining.Models.Entities.Meal", null)
                         .WithMany()
-                        .HasForeignKey("MealsMealId")
+                        .HasForeignKey("MealsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
